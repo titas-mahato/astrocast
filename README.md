@@ -6,6 +6,10 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+<p align="center">
+  <img src="static/images/cover.png" alt="AstroCast Cover" width="100%" style="border-radius: 10px;">
+</p>
+
 ---
 
 ## Overview
@@ -24,7 +28,7 @@ Select your location, and AstroCast's open-source tabular AI model evaluates atm
 - **Active Screen Cutoff ("Touch Grass" Mode)**: Features an integrated 30-second dark adaptation countdown timer. Because the human eye requires 20 minutes in darkness to synthesize rhodopsin for rod cell sensitivity, AstroCast urges you to put your phone in your pocket and look up.
 - **Field Red-Light Mode**: One-click toggle transforms the entire interface into monochrome 650nm dark-red on pure obsidian black—the standard light spectrum used by astronomers in field tents to preserve night vision without resetting dark adaptation.
 - **Naked-Eye Celestial Targets**: Automatically calculates currently visible planetary positions (e.g. Jupiter, Saturn) and seasonal deep-space targets (Pleiades cluster, Andromeda Galaxy) that require zero telescopes.
-- ** Indian Dark Sky Sanctuaries**: Pre-calibrated with India's premier astronomical locations including **Hanle Dark Sky Reserve** (Ladakh, 4,500m), **Spiti Valley** (Himachal), the **Great Rann of Kutch** (Gujarat), **Kodaikanal Observatory** (Tamil Nadu), and Western Ghats ridges.
+- **Indian Dark Sky Sanctuaries**: Pre-calibrated with India's premier astronomical locations including **Hanle Dark Sky Reserve** (Ladakh, 4,500m), **Spiti Valley** (Himachal), the **Great Rann of Kutch** (Gujarat), **Kodaikanal Observatory** (Tamil Nadu), and Western Ghats ridges.
 - **Autonomous Offline Fallback**: Works completely offline on trails or in remote dark sky sanctuaries without cellular connectivity using an autonomous microclimate physics simulation.
 
 ---
