@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTROCAST — Leave the Screen. Gaze into the Cosmos.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="theme-night">
+  <div class="bg-overlay"></div>
+
+  <!-- Header Navigation -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <span class="brand-sparkle">✦</span>
+      <span class="brand-text">ASTROCAST</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#forecast-section" class="nav-link" id="nav-check">Check Tonight</a>
+      <a href="#science-section" class="nav-link">How It Works</a>
+      <button id="red-light-toggle" class="btn-red-mode" title="Toggle red-light night-vision preserving mode">
+        <span class="red-dot"></span> Red Light Mode
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="hero-container">
+    <div class="top-announcement">
+      <div class="hero-badge">HACKTOBERFEST 2026 • OPEN-SOURCE AI CHALLENGE</div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">ASTROCAST</h1>
+      <h2 class="hero-subtitle">
+        Gaze into the cosmos.
+      </h2>
+      <p class="hero-description">
+        Built on open-weight AI (TabPFN architecture) — not a chatbot.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#forecast-section" class="btn btn-primary" id="btn-hero-check">Check tonight's sky</a>
+        <a href="#science-section" class="btn btn-secondary">See the science</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Interactive Forecast & Observing Engine -->
+  <section id="forecast-section" class="forecast-section">
+    <div class="container">
+      
+      <!-- Preset Bar -->
+      <div class="preset-card glass-panel">
+        <div class="preset-header">
+          <span class="label-tiny">SELECT OBSERVING SITE</span>
+          <div class="live-pill"><span class="pulse-indicator"></span> Real-Time Physics Inference</div>
+        </div>
+        <div class="preset-buttons">
+          <button class="preset-btn active" data-preset="hanle" data-lat="32.78" data-lon="78.96" data-name="Hanle Dark Sky Reserve (Ladakh)">Hanle Dark Sky Reserve (Ladakh)</button>
+          <button class="preset-btn" data-preset="spiti" data-lat="32.22" data-lon="78.01" data-name="Spiti Valley (Kaza / Kibber)">Spiti Valley (Kaza)</button>
+          <button class="preset-btn" data-preset="kutch" data-lat="23.83" data-lon="69.83" data-name="Great Rann of Kutch">Rann of Kutch (Desert)</button>
+          <button class="preset-btn" data-preset="kodaikanal" data-lat="10.23" data-lon="77.46" data-name="Kodaikanal Observatory">Kodaikanal Observatory</button>
+          <button class="preset-btn" data-preset="ghats" data-lat="18.75" data-lon="73.40" data-name="Western Ghats Ridge">Western Ghats High Ridge</button>
+          <button class="preset-btn" data-preset="suburban_outskirts" data-lat="13.25" data-lon="77.71" data-name="Bengaluru / Pune Outskirts">City Outskirts / Balcony</button>
+        </div>
+      </div>
+
+      <!-- Live Stargazing Dashboard Grid -->
+      <div class="dashboard-grid">
+        
+        <!-- Main Score Panel -->
+        <div class="glass-panel main-score-panel">
+          <div class="panel-header">
+            <div>
+              <span class="site-name" id="display-location">Hanle Dark Sky Reserve (Ladakh)</span>
+              <span class="site-coords" id="display-coords">32.78° N, 78.96° E</span>
+            </div>
+            <div class="rating-badge rating-emerald" id="display-rating-badge">Pristine Dark Sky</div>
+          </div>
+
+          <div class="score-hero">
+            <div class="score-circle">
+              <span class="score-number" id="display-score">89</span>
+              <span class="score-total">/ 100</span>
+            </div>
+            <div class="score-meta">
+              <h3 class="score-title">Stargazing Quality Index</h3>
+              <p class="score-summary" id="display-summary">
+                Crystal clear atmospheric column with minimal turbulence. Ideal for deep-sky observation and galactic core photography.
+              </p>
+            </div>
+          </div>
+
+          <!-- Secondary Metrics -->
+          <div class="sub-metrics-row">
+            <div class="metric-pill">
+              <span class="metric-label">Atmospheric Seeing</span>
+              <span class="metric-val" id="display-seeing">91%</span>
+              <div class="progress-bar"><div class="progress-fill" id="bar-seeing" style="width: 91%"></div></div>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-label">Transparency Column</span>
+              <span class="metric-val" id="display-transparency">87%</span>
+              <div class="progress-bar"><div class="progress-fill" id="bar-transparency" style="width: 87%"></div></div>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-label">Cloud Attenuation</span>
+              <span class="metric-val" id="display-cloud">12%</span>
+              <div class="progress-bar"><div class="progress-fill fill-cloud" id="bar-cloud" style="width: 12%"></div></div>
+            </div>
+          </div>
+
+          <!-- Screen Lock / Touch Grass Enforcer -->
+          <div class="touch-grass-card">
+            <div class="touch-grass-icon">🌌</div>
+            <div class="touch-grass-text">
+              <strong>Screen Cutoff Recommendation:</strong>
+              <span>Your eyes require 20 minutes in absolute darkness to synthesize rhodopsin for night vision. Check your target below, then shut off this screen and head outside.</span>
+            </div>
+            <button class="btn-dark-timer" id="btn-dark-timer">
+              Start 30s Dark Timer ⏱
+            </button>
+          </div>
+        </div>
+
+        <!-- Moon & Atmospheric Physics Column -->
+        <div class="side-column">
+          
+          <!-- Moon Panel -->
+          <div class="glass-panel moon-panel">
+            <div class="panel-tag">LUNAR INTERFERENCE</div>
+            <div class="moon-display">
+              <span class="moon-icon" id="display-moon-icon">🌒</span>
+              <div>
+                <h4 class="moon-phase-name" id="display-moon-phase">Waxing Crescent</h4>
+                <div class="moon-stats">
+                  <span>Illumination: <strong id="display-moon-illum">14%</strong></span>
+                  <span>• Age: <strong id="display-moon-age">3.4 days</strong></span>
+                </div>
+              </div>
+            </div>
+            <p class="moon-advisory" id="display-moon-advisory">
+              Excellent dark sky after moonset in early evening. Low lunar skyglow.
+            </p>
+          </div>
+
+          <!-- Prime Observation Window -->
+          <div class="glass-panel window-panel">
+            <div class="panel-tag">PEAK OBSERVING WINDOW</div>
+            <div class="window-time" id="display-window-time">21:45 — 01:30 Local</div>
+            <div class="window-duration" id="display-window-duration">Window Duration: 3 hr 45 min</div>
+            <p class="window-desc" id="display-window-desc">
+              Prime Astronomical Night: Peak contrast and minimal atmospheric boiling.
+            </p>
+          </div>
+
+          <!-- Meteorological Features -->
+          <div class="glass-panel weather-panel">
+            <div class="panel-tag">MICROCLIMATE VECTOR</div>
+            <div class="weather-table">
+              <div class="weather-row">
+                <span>Ambient Temp:</span>
+                <strong id="display-temp">12.4 °C</strong>
+              </div>
+              <div class="weather-row">
+                <span>Dew Point Gap:</span>
+                <strong id="display-dew-gap">5.6 °C (No Fog)</strong>
+              </div>
+              <div class="weather-row">
+                <span>Surface Wind:</span>
+                <strong id="display-wind">8.4 km/h</strong>
+              </div>
+              <div class="weather-row">
+                <span>Data Engine:</span>
+                <span class="source-tag" id="display-source">Open-Meteo API</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Tonight's Naked-Eye Celestial Targets -->
+      <div class="glass-panel targets-panel">
+        <div class="targets-header">
+          <div>
+            <span class="label-tiny">CELESTIAL TARGETS</span>
+            <h3 class="targets-title">What to Look For With the Naked Eye Tonight</h3>
+          </div>
+          <button class="btn btn-print" id="btn-print-pass">✦ Save Offline Pocket Pass</button>
+        </div>
+
+        <div class="targets-grid" id="targets-container">
+          <!-- Dynamically populated from /api/forecast -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Science & Open Innovation Section -->
+  <section id="science-section" class="science-section">
+    <div class="container">
+      <div class="glass-panel science-panel">
+        <span class="label-tiny">ARCHITECTURE & ETHOS</span>
+        <h2 class="science-title">Why Open Innovation Matters for AstroCast</h2>
+        
+        <div class="science-grid">
+          <div class="science-card">
+            <h4>1. Open-Weight Tabular AI (TabPFN)</h4>
+            <p>
+              Unlike chat-based LLMs that hallucinate atmospheric data, AstroCast uses open-weight tabular foundation models trained specifically on tabular meteorological features (dew point depression, micro-turbulent shear, cloud stratification).
+            </p>
+          </div>
+          <div class="science-card">
+            <h4>2. Zero-Cloud Offline Inference</h4>
+            <p>
+              True outdoor stargazers hike miles away from cellular signal. AstroCast includes an autonomous offline microclimate simulation and local GBDT inference engine that runs completely disconnected on any laptop.
+            </p>
+          </div>
+          <div class="science-card">
+            <h4>3. Screen Minimization by Design</h4>
+            <p>
+              Closed commercial apps maximize screen engagement with ads and infinite scroll. AstroCast does the opposite: it gives you one tabular score, one 3-item celestial checklist, and actively prompts you to lock the screen.
+            </p>
+          </div>
+        </div>
+
+        <div class="hackathon-footer">
+          <span>Submitted for <strong>Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass</strong></span>
+          <span>Deployable to <strong>Render</strong> • Powered by <strong>Open-Weight Tabular ML</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Minimal Dark Timer Modal -->
+  <div id="dark-modal" class="dark-modal hidden">
+    <div class="dark-modal-card">
+      <div class="modal-eye">👁‍🗨</div>
+      <h3>Dark Adaptation Commencing</h3>
+      <p>Put your device face-down in your pocket. In 30 seconds, your pupils will begin dilating for celestial viewing.</p>
+      <div class="countdown-circle" id="countdown-num">30</div>
+      <button class="btn btn-secondary" id="btn-cancel-timer">Cancel Timer</button>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

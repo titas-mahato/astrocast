@@ -1,0 +1,1 @@
+"""AstroCast core application package."""
