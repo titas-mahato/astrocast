@@ -1,10 +1,9 @@
 # ASTROCAST ✦
 > **Gaze into the cosmos.**
-> Built on open-weight AI (TabPFN architecture) — not a chatbot.
+> Built on open-weight AI (TabPFN architecture) for night sky forecasts.
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688.svg)](https://fastapi.tiangolo.com/)
-[![Render](https://img.shields.io/badge/Deploy-Render-46E3B7.svg)](https://render.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -27,7 +26,6 @@ Select your location, and AstroCast's open-source tabular AI model evaluates atm
 - **🌌 Naked-Eye Celestial Targets**: Automatically calculates currently visible planetary positions (e.g. Jupiter, Saturn) and seasonal deep-space targets (Pleiades cluster, Andromeda Galaxy) that require zero telescopes.
 - **🇮🇳 Indian Dark Sky Sanctuaries**: Pre-calibrated with India's premier astronomical locations including **Hanle Dark Sky Reserve** (Ladakh, 4,500m), **Spiti Valley** (Himachal), the **Great Rann of Kutch** (Gujarat), **Kodaikanal Observatory** (Tamil Nadu), and Western Ghats ridges.
 - **🛰 Autonomous Offline Fallback**: Works completely offline on trails or in remote dark sky sanctuaries without cellular connectivity using an autonomous microclimate physics simulation.
-- **🚀 1-Click Render Deploy**: Fully configured with `render.yaml` for instant deployment on Render.
 
 ---
 
@@ -82,16 +80,6 @@ astrocast/
 | `GET` | `/api/forecast` | Seeing score, transparency index, moon phase, and targets (`lat`, `lon`, `location_name`) |
 | `GET` | `/api/presets` | List of pre-calibrated Indian dark sky sanctuaries |
 | `GET` | `/api/health` | Health check for production monitoring & deployment |
-
----
-
-## Deployment (Render)
-
-This repository includes a [`render.yaml`](render.yaml) blueprint:
-
-1. Push this repository to GitHub.
-2. Link your repository in [Render](https://dashboard.render.com).
-3. Render will auto-detect `render.yaml` and deploy your FastAPI service with zero manual configuration.
 
 ---
 
